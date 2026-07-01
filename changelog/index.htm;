@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zyy Maple Leaf OS - 版本更新日志</title>
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #D97706;
+            --primary-hover: #B45309;
+            --bg-card: rgba(255, 255, 255, 0.1);
+            --bg-card-hover: rgba(255, 255, 255, 0.15);
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); /* 深色背景 */
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-btn {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        .back-btn:hover { opacity: 1; color: var(--primary-color); }
+
+        main {
+            width: 100%;
+            max-width: 900px;
+            padding: 3rem 1.5rem;
+            flex: 1;
+        }
+
+        h1.page-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(to right, #fff, #ccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .version-block {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .version-block::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.2);
+        }
+
+        .version-id {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .update-theme {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .change-list {
+            list-style: none;
+            background: var(--bg-card);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .change-list li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .change-list li:last-child { margin-bottom: 0; }
+
+        .change-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .coming-soon .version-id {
+            color: var(--secondary-color); /* 金色高亮 */
+        }
+        
+        @media (max-width: 600px) {
+            h1.page-title { font-size: 1.8rem; }
+            .version-id { font-size: 1.5rem; }
+            .timeline { padding-left: 1.5rem; }
+            .version-block::before { left: -1.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="//zyy.undz.cn/" class="logo">
+            <img src="//zyy.undz.cn/images/pure_experience.png" alt="ZyyOS图标" height="40"> Zyy Maple Leaf OS
+        </a>
+        <a href="/" class="back-btn">← 返回 Wiki 首页</a>
+    </header>
+
+    <main>
+        <h1 class="page-title">版本更新日志</h1>
+
+        <div class="timeline">
+
+            <!-- 26N16 -->
+            <div class="version-block coming-soon">
+                <div class="version-id">26N16 <span style="font-size: 0.6em; opacity: 0.7; vertical-align: middle;">(即将到来)</span></div>
+                <span class="update-theme">主题更新名称: 缤纷更新 (名称未定)</span>
+                <ul class="change-list">
+                    <li>在设置中添加了“随机壁纸”和“更多壁纸”</li>
+                    <li>删除了“刷新桌面按钮”</li>
+                    <li>修复了桌面应用显示bug</li>
+                    <li>修复了应用库的显示bug</li>
+                </ul>
+            </div>
+
+            <!-- 26N15 -->
+            <div class="version-block">
+                <div class="version-id">26N15</div>
+                <span class="update-theme">主题更新名称: 计算器更新</span>
+                <ul class="change-list">
+                    <li>添加了计算器，并给计算器添加了根号</li>
+                    <li>重构了计算器的“等于”计算逻辑</li>
+                    <li>使这些窗口可移动：设置，计算器，系统更新日志</li>
+                    <li>为“设置->感谢与成员->打开作者B站”添加了动画</li>
+                    <li>删除了“设置进度”，并为设置页选项添加了选中造型</li>
+                    <li>删除了程序文件读取器，我的世界游戏和共创世界</li>
+                    <li>重构了桌面应用的逻辑</li>
+                    <li>修改了浏览器的搜索引擎设置</li>
+                    <li>调整小组件的大小</li>
+                    <li>修改了OOBE界面</li>
+                    <li>修复了5个已知Bug</li>
+                </ul>
+            </div>
+
+            <!-- 26N14 -->
+            <div class="version-block">
+                <div class="version-id">26N14</div>
+                <span class="update-theme">主题更新名称: 桌面更新</span>
+                <ul class="change-list">
+                    <li>修复了2个bug</li>
+                    <li>添加了设置->应用->安装的应用</li>
+                    <li>现在应用可以添加到桌面了</li>
+                    <li>添加了共创世界</li>
+                    <li>在登录页面添加了“重置账户”按钮</li>
+                </ul>
+            </div>
+
+            <!-- 26N13 -->
+            <div class="version-block">
+                <div class="version-id">26N13</div>
+                <span class="update-theme">主题更新名称: MC更新</span>
+                <ul class="change-list">
+                    <li>修复了1个bug</li>
+                    <li>添加了我的世界游戏</li>
+                </ul>
+            </div>
+
+            <!-- 26N09~26N12 -->
+            <div class="version-block">
+                <div class="version-id">26N09 ~ 26N12</div>
+                <span class="update-theme">主题更新名称: 完善更新</span>
+                <ul class="change-list">
+                    <li>现在应用可以导入了</li>
+                    <li>添加了文本编辑</li>
+                    <li>给调节亮度和声音添加了动画</li>
+                    <li>完善了大部分应用和功能</li>
+                    <li>添加了程序文件读取器</li>
+                    <li>添加了Zyy办公</li>
+                    <li>给部分窗口UI适配了暗色模式</li>
+                    <li>在设置中添加了ZyyAI设置</li>
+                    <li>在设置中添加了应用选项</li>
+                    <li>修复了12个已知bug</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
