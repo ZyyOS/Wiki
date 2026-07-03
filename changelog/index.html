@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <link rel="icon" href="//zyy.undz.cn/favicon.png" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="//zyy.undz.cn/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="//zyy.undz.cn/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zyy Maple Leaf OS - 版本更新日志</title>
@@ -156,13 +159,41 @@
         .coming-soon .version-id {
             color: var(--secondary-color); /* 金色高亮 */
         }
-        
+
         @media (max-width: 600px) {
             h1.page-title { font-size: 1.8rem; }
             .version-id { font-size: 1.5rem; }
             .timeline { padding-left: 1.5rem; }
             .version-block::before { left: -1.85rem; }
         }
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s ease;
+        display: inline-block;
+    }
+
+    a:hover {
+        color: var(--secondary-color); /* 悬停变亮 */
+    }
+
+    a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--secondary-color);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease-out;
+    }
+    a:hover::after {
+        transform: scaleX(1);
+    }
     </style>
 </head>
 <body>
@@ -174,19 +205,19 @@
     </header>
 
     <main>
-        <h1 class="page-title">版本更新日志</h1>
-
+        <h1 class="page-title">系统更新日志</h1>
+        <span class="update-theme">自 Zyy Maple Leaf OS 发行以来所记录的版本更新日志</span>
+        <p>在 <a href="/settings/">设置</a>->系统更新 中点击“系统更新日志”按钮即可查看</p>
+        <br>
         <div class="timeline">
-
-            <!-- 26N16 -->
             <div class="version-block coming-soon">
                 <div class="version-id">26N16 <span style="font-size: 0.6em; opacity: 0.7; vertical-align: middle;">(即将到来)</span></div>
                 <span class="update-theme">主题更新名称: 缤纷更新 (名称未定)</span>
                 <ul class="change-list">
-                    <li>在设置中添加了“随机壁纸”和“更多壁纸”</li>
+                    <li>在<a href="/settings/">设置</a>中添加了“随机壁纸”和“更多壁纸”</li>
                     <li>删除了“刷新桌面按钮”</li>
-                    <li>修复了桌面应用显示bug</li>
-                    <li>修复了应用库的显示bug</li>
+                    <li>修复了<a href="/desktop-app/">桌面应用</a>显示bug</li>
+                    <li>修复了<a href="/app-library/">应用库</a>的显示bug</li>
                 </ul>
             </div>
 
@@ -195,14 +226,14 @@
                 <div class="version-id">26N15</div>
                 <span class="update-theme">主题更新名称: 计算器更新</span>
                 <ul class="change-list">
-                    <li>添加了计算器，并给计算器添加了根号</li>
-                    <li>重构了计算器的“等于”计算逻辑</li>
-                    <li>使这些窗口可移动：设置，计算器，系统更新日志</li>
-                    <li>为“设置->感谢与成员->打开作者B站”添加了动画</li>
+                    <li>添加了<a href="/calculator/">计算器</a>，并给<a href="/calculator/">计算器</a>添加了根号</li>
+                    <li>重构了<a href="/calculator/">计算器</a>的“等于”计算逻辑</li>
+                    <li>使这些窗口可移动：<a href="/settings/">设置</a>，<a href="/calculator/">计算器</a>，<a href="/changelog/">系统更新日志</a></li>
+                    <li>为“<a href="/settings/">设置</a>->感谢与成员->打开作者B站”添加了动画</li>
                     <li>删除了“设置进度”，并为设置页选项添加了选中造型</li>
-                    <li>删除了程序文件读取器，我的世界游戏和共创世界</li>
-                    <li>重构了桌面应用的逻辑</li>
-                    <li>修改了浏览器的搜索引擎设置</li>
+                    <li>删除了<a href="/app-reader/">程序文件读取器</a>，<a href="/MC2D/">我的世界</a>游戏和<a href="/gcsj/">共创世界</a></li>
+                    <li>重构了<a href="/desktop-app/">桌面应用</a>的逻辑</li>
+                    <li>修改了<a href="/browser/">浏览器</a>的搜索引擎设置</li>
                     <li>调整小组件的大小</li>
                     <li>修改了OOBE界面</li>
                     <li>修复了5个已知Bug</li>
@@ -215,9 +246,9 @@
                 <span class="update-theme">主题更新名称: 桌面更新</span>
                 <ul class="change-list">
                     <li>修复了2个bug</li>
-                    <li>添加了设置->应用->安装的应用</li>
-                    <li>现在应用可以添加到桌面了</li>
-                    <li>添加了共创世界</li>
+                    <li>添加了<a href="/settings/">设置</a>-><a href="/apps/">应用</a>->安装的应用</li>
+                    <li>现在<a href="/apps/">应用</a>可以添加到<a href="desktop">桌面</a>了</li>
+                    <li>添加了<a href="/gcsj/">共创世界</a></li>
                     <li>在登录页面添加了“重置账户”按钮</li>
                 </ul>
             </div>
@@ -228,24 +259,23 @@
                 <span class="update-theme">主题更新名称: MC更新</span>
                 <ul class="change-list">
                     <li>修复了1个bug</li>
-                    <li>添加了我的世界游戏</li>
+                    <li>添加了<a href="/MC2D/">我的世界</a>游戏</li>
                 </ul>
             </div>
 
-            <!-- 26N09~26N12 -->
             <div class="version-block">
                 <div class="version-id">26N09 ~ 26N12</div>
                 <span class="update-theme">主题更新名称: 完善更新</span>
                 <ul class="change-list">
-                    <li>现在应用可以导入了</li>
-                    <li>添加了文本编辑</li>
+                    <li>现在<a href="/apps/">应用</a>可以导入了</li>
+                    <li>添加了<a href="/Notepad/">文本编辑</a></li>
                     <li>给调节亮度和声音添加了动画</li>
-                    <li>完善了大部分应用和功能</li>
-                    <li>添加了程序文件读取器</li>
-                    <li>添加了Zyy办公</li>
-                    <li>给部分窗口UI适配了暗色模式</li>
-                    <li>在设置中添加了ZyyAI设置</li>
-                    <li>在设置中添加了应用选项</li>
+                    <li>完善了大部分<a href="/apps/">应用</a>和功能</li>
+                    <li>添加了<a href="/app-reader/">程序文件读取器</a></li>
+                    <li>添加了<a href="Zyy-office">Zyy办公</a></li>
+                    <li>给部分窗口UI适配了<a href="/dark-mode/">暗色模式</a></li>
+                    <li>在<a href="/settings/">设置</a>中添加了<a href="/ZyyAI/">ZyyAI</a>设置</li>
+                    <li>在<a href="/settings/">设置</a>中添加了<a href="/apps/">应用</a>选项</li>
                     <li>修复了12个已知bug</li>
                 </ul>
             </div>
